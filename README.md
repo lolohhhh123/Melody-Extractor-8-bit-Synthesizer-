@@ -1,4 +1,4 @@
-# Melody Extractor & 8-bit Synthesizer  
+# Melody Extractor & 8-bit Synthesizer
 # 旋律提取器与 8-bit 合成器
 
 [English](#english) | [中文](#中文)
@@ -26,8 +26,8 @@ This tool extracts the main melody from an audio file (using RMVPE/CREPE/pYIN) a
 Install required packages:
 ```bash
 pip install -r requirements.txt
-
-Core packages:
+```
+###Core packages:
 
 librosa==0.10.2.post1
 
@@ -51,12 +51,14 @@ crepe – pip install crepe (requires TensorFlow)
 
 rmvpe
 
-Usage
+###Usage
 Basic command:
 
-bash
+```bash
 python melody_extractor.py input.wav --full --render-wav --multitrack --drum-pattern rock --time-offset 0.05
-Key Arguments
+```
+###Key Arguments
+
 Argument	Description
 --full	Extract melody from the entire song (default: only top memorable segments)
 --render-wav	Generate WAV audio (sine wave if not --multitrack)
@@ -67,16 +69,17 @@ Argument	Description
 --drum-pattern	simple, rock, pop, or funk
 --config	Load JSON config file
 --save-config	Save current config to JSON
-Output Files
-_melody.mid – MIDI file of the extracted main melody
 
-.wav – 8-bit synthesized audio (if --render-wav + --multitrack)
+###Output Files
+*_melody.mid – MIDI file of the extracted main melody
 
-_mix.wav – Melody mixed with original audio (if --mix)
+*.wav – 8-bit synthesized audio (if --render-wav + --multitrack)
 
-License
+*_mix.wav – Melody mixed with original audio (if --mix)
+
+###License
 MIT
-```bash
+
 ##中文 <a name="中文"></a>
 
 ###概述
@@ -103,12 +106,13 @@ JSON 配置保存/加载，方便复用参数
 
 与原曲高质量混音输出（立体声，保留原采样率）
 
-```bash
-依赖
+###依赖
 安装所需包：
 
-bash
+```bash
 pip install -r requirements.txt
+```
+###核心包：
 
 librosa==0.10.2.post1
 
@@ -132,12 +136,14 @@ crepe – pip install crepe（需 TensorFlow）
 
 rmvpe
 
-使用方法
+###使用方法
 基础命令：
 
-bash
+```bash
 python melody_extractor.py input.wav --full --render-wav --multitrack --drum-pattern rock --time-offset 0.05
-主要参数
+```
+
+###主要参数
 参数	说明
 --full	提取全曲旋律（默认仅提取高记忆片段）
 --render-wav	生成 WAV 音频（若不开启 --multitrack 则为正弦波）
@@ -148,12 +154,13 @@ python melody_extractor.py input.wav --full --render-wav --multitrack --drum-pat
 --drum-pattern	simple, rock, pop, funk
 --config	加载 JSON 配置文件
 --save-config	保存当前配置到 JSON
-输出文件
-_melody.mid – 提取的主旋律 MIDI 文件
 
-.wav – 8-bit 合成音频（若开启 --render-wav + --multitrack）
+###输出文件
+*_melody.mid – 提取的主旋律 MIDI 文件
 
-_mix.wav – 旋律与原曲混音（若开启 --mix）
-```
+*.wav – 8-bit 合成音频（若开启 --render-wav + --multitrack）
+
+*_mix.wav – 旋律与原曲混音（若开启 --mix）
+
 许可证
 MIT
