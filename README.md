@@ -76,12 +76,13 @@ _mix.wav – Melody mixed with original audio (if --mix)
 
 License
 MIT
+```bash
+##中文 <a name="中文"></a>
 
-中文 <a name="中文"></a>
-概述
+###概述
 本工具从音频文件中提取主旋律（使用 RMVPE/CREPE/pYIN），并生成 8-bit 风格的多轨 WAV（方波、三角波、琶音、鼓点），支持多种参数自定义。可提取全曲或仅根据音频结构分析提取高记忆片段。
 
-特性
+###特性
 自动检测 BPM 和节拍（librosa）
 
 主旋律提取：RMVPE（首选）+ CREPE/pYIN 备用
@@ -102,6 +103,7 @@ JSON 配置保存/加载，方便复用参数
 
 与原曲高质量混音输出（立体声，保留原采样率）
 
+```bash
 依赖
 安装所需包：
 
@@ -152,6 +154,6 @@ _melody.mid – 提取的主旋律 MIDI 文件
 .wav – 8-bit 合成音频（若开启 --render-wav + --multitrack）
 
 _mix.wav – 旋律与原曲混音（若开启 --mix）
-
+```
 许可证
 MIT
