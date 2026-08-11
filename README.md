@@ -27,37 +27,29 @@ Install required packages:
 ```bash
 pip install -r requirements.txt
 ```
-###Core packages:
-
+### Core packages:
+```bash
 librosa==0.10.2.post1
-
 MIDIUtil==1.2.1
-
 numpy==1.24.3
-
 scipy==1.10.1
-
 soundfile==0.12.1
-
 torch==1.11.0+cu115
-
 torchaudio==0.11.0+cu115
-
 torchvision==0.12.0+cu115
 
 Optional (fallback pitch extraction):
-
-crepe – pip install crepe (requires TensorFlow)
-
+crepe
 rmvpe
+```
 
-###Usage
+### Usage
 Basic command:
 
 ```bash
 python melody_extractor.py input.wav --full --render-wav --multitrack --drum-pattern rock --time-offset 0.05
 ```
-###Key Arguments
+### Key Arguments
 
 Argument	Description
 --full	Extract melody from the entire song (default: only top memorable segments)
@@ -70,80 +62,63 @@ Argument	Description
 --config	Load JSON config file
 --save-config	Save current config to JSON
 
-###Output Files
+### Output Files
 *_melody.mid – MIDI file of the extracted main melody
 
-*.wav – 8-bit synthesized audio (if --render-wav + --multitrack)
+*.wav – 8-bit synthesized audio (--render-wav --multitrack)
 
 *_mix.wav – Melody mixed with original audio (if --mix)
 
-###License
+### License
 MIT
 
-##中文 <a name="中文"></a>
+## 中文 <a name="中文"></a>
 
-###概述
+### 概述
 本工具从音频文件中提取主旋律（使用 RMVPE/CREPE/pYIN），并生成 8-bit 风格的多轨 WAV（方波、三角波、琶音、鼓点），支持多种参数自定义。可提取全曲或仅根据音频结构分析提取高记忆片段。
 
-###特性
+### 特性
 自动检测 BPM 和节拍（librosa）
-
 主旋律提取：RMVPE（首选）+ CREPE/pYIN 备用
-
 8-bit 多轨合成：
-
 旋律（方波）
-
 低音（三角波，降低八度）
-
 琶音（脉冲波，占空比 25%）
-
 鼓点（底鼓、军鼓、踩镲、嗵鼓，不同节奏型）
-
 可调各轨音量、全局时间偏移、静音区间
-
 JSON 配置保存/加载，方便复用参数
-
 与原曲高质量混音输出（立体声，保留原采样率）
 
-###依赖
+### 依赖
 安装所需包：
 
 ```bash
 pip install -r requirements.txt
 ```
-###核心包：
-
+### 核心包：
+```bash
 librosa==0.10.2.post1
-
 MIDIUtil==1.2.1
-
 numpy==1.24.3
-
 scipy==1.10.1
-
 soundfile==0.12.1
-
 torch==1.11.0+cu115
-
 torchaudio==0.11.0+cu115
-
 torchvision==0.12.0+cu115
 
 可选（备用音高提取）：
-
-crepe – pip install crepe（需 TensorFlow）
-
+crepe
 rmvpe
+```
 
-###使用方法
+### 使用方法
 基础命令：
 
 ```bash
 python melody_extractor.py input.wav --full --render-wav --multitrack --drum-pattern rock --time-offset 0.05
 ```
 
-###主要参数
+### 主要参数
 参数	说明
 --full	提取全曲旋律（默认仅提取高记忆片段）
 --render-wav	生成 WAV 音频（若不开启 --multitrack 则为正弦波）
@@ -155,12 +130,12 @@ python melody_extractor.py input.wav --full --render-wav --multitrack --drum-pat
 --config	加载 JSON 配置文件
 --save-config	保存当前配置到 JSON
 
-###输出文件
+### 输出文件
 *_melody.mid – 提取的主旋律 MIDI 文件
 
-*.wav – 8-bit 合成音频（若开启 --render-wav + --multitrack）
+*.wav – 8-bit 合成音频（若开启 --render-wav --multitrack）
 
 *_mix.wav – 旋律与原曲混音（若开启 --mix）
 
-许可证
+### 许可证
 MIT
